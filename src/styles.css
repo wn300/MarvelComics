@@ -1,1 +1,252 @@
-/* You can add global styles to this file, and also import other style files */
+/*test border to view elements*/
+.border-test{
+    border: 1px solid red;
+}
+/*begin -- styles heades nav and footer of the index*/
+.nav-header-sombra{
+    -webkit-box-shadow: 0px 2px 5px 1px rgba(0,0,0,0.75) !important;
+    -moz-box-shadow: 0px 2px 5px 1px rgba(0,0,0,0.75) !important;
+    box-shadow: 0px 2px 5px 1px rgba(0,0,0,0.75) !important;
+}
+
+.navbar {
+    padding: .5em 0em .5rem 0em !important;
+}
+
+.form-group {
+    margin-bottom: .7rem !important;
+}
+
+.form-control {
+    padding: .81rem .75rem !important;
+    border-radius: 0.15rem !important;
+    margin-top: 0.4rem !important;
+}
+
+#container-header {
+    width: 100% !important;
+}
+
+#mainNav, #footer{
+    background-color: #2D2727 !important;
+    border-color: #2D2727 !important;
+    color:#eee;
+}
+
+#footer{
+   padding-top: 1rem !important;
+   padding-bottom: 1.1rem !important;
+}
+
+#grability-footer-text{
+    margin-top: 0.7rem !important;
+}
+
+#top-search{
+     margin-top: 4px;
+}
+
+.search-input-icon
+{
+    background: url("./assets/images/icons/search.png")  right no-repeat #FAFAFA !important;      
+}
+
+.superhero-icon
+{
+    background: url("./assets/images/icons/characters.png")  right no-repeat #FAFAFA !important;      
+}
+
+input::-webkit-input-placeholder {
+  color: #BDBDBD !important;
+}
+input:-moz-placeholder {
+  color: #BDBDBD !important; 
+}
+input:-ms-input-placeholder { 
+  color: #BDBDBD !important; 
+}
+/*end -- styles heades nav and footer of the index*/
+
+/*begin -- styles app.component of the routing in app-root*/
+#continer-general{
+    background-color: #F4F4F4 !important;
+    padding-bottom: 50px;
+}
+
+#continer-secundary{
+    background-color: #EBEBEB !important;
+}
+
+.characters-general-top {
+    padding-top: 20px;
+}
+
+.general-top {
+    padding-top: 10px;
+}
+
+.row-general-top {
+   margin-top: 4px;
+}
+
+select.form-control:not([size]):not([multiple]) {
+    height: calc(3.0rem + 2px) !important;
+}
+
+.div-general-comics{   
+    height: 400px;
+    margin-top: 40px;
+    background-color: #FFFFFF;
+    margin-left: 37px;
+}
+
+.h3-characters{
+   margin-left: 20px !important;
+}
+
+.img-general{
+    -webkit-box-shadow: 10px 10px 37px -12px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 37px -12px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 37px -12px rgba(0,0,0,0.75);
+    width: 220px;
+    margin-left: -35px;
+    margin-top: -20px;
+}
+
+.h5-title-general {
+    margin-left: -15px;
+    margin-top: -15px
+}
+
+.text-general {
+    margin-left: -15px;
+    color: #786E6D;
+}
+
+.text-color-top {
+    color: #786E6D;
+    margin-top: 15px;
+}
+
+.button-general {
+    width: 102px !important;
+    height: 41px;
+    padding: .0rem .0rem !important;
+    background-color: #EC1D23 !important;
+    font-size: 0.8rem !important;
+    border: none !important;
+    color: #ffffff !important;
+    font-weight: bold;
+    border-radius: 0.1rem !important;
+}
+
+
+@media (max-width: 1027px) {
+    .div-general-comics {
+        height: 555px;
+        margin-top: 40px;
+        background-color: #FFFFFF;
+        margin-left: 28px;
+    }
+
+  .img-general {
+    -webkit-box-shadow: 10px 10px 37px -12px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 37px -12px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 37px -12px rgba(0,0,0,0.75);
+    width: 160px;
+    margin-left: -30px;
+    margin-top: -15px;
+  }
+}
+
+
+@media (max-width: 768px){
+    .div-general-comics {
+        height: 410px;
+        margin-top: 40px;
+        background-color: #FFFFFF; 
+        margin-left: 27px;      
+    }
+
+    .h3-characters {
+        margin-left: 0px !important;
+    }
+
+    .img-general {
+        -webkit-box-shadow: 10px 10px 37px -12px rgba(0,0,0,0.75);
+        -moz-box-shadow: 10px 10px 37px -12px rgba(0,0,0,0.75);
+        box-shadow: 10px 10px 37px -12px rgba(0,0,0,0.75);
+        width: 215px;
+        margin-left: -26px;
+        margin-top: -27px;
+
+    }
+
+    .button-general {
+        width: 130px !important;
+        height: 41px;
+        padding: .0rem .0rem !important;
+        background-color: #EC1D23 !important;
+        font-size: 1rem !important;
+        border: none !important;
+        color: #ffffff !important;
+        font-weight: bold;
+        border-radius: 0.1rem !important;
+    }
+}
+
+@media (max-width: 732px) {
+    .img-general {
+        -webkit-box-shadow: 10px 10px 18px -12px rgba(0,0,0,0.75);
+        -moz-box-shadow: 10px 10px 18px -12px rgba(0,0,0,0.75);
+        box-shadow: 10px 10px 18px -12px rgba(0,0,0,0.75);
+        width: 190px;
+        margin-left: -27px;
+        margin-top: -20px;  
+    }
+
+    .h5-title-general {
+        margin-left: 0px;
+        margin-top: 5px
+    }
+
+    .div-general-comics {
+        height: 660px;
+        margin-top: 40px;
+        background-color: #FFFFFF; 
+        margin-left: 19px;      
+    }
+
+    .button-general {
+        width: 130px !important;
+        height: 41px;
+        padding: .0rem .0rem !important;
+        background-color: #EC1D23 !important;
+        font-size: 1rem !important;
+        border: none !important;
+        color: #ffffff !important;
+        font-weight: bold;
+        border-radius: 0.1rem !important;
+        margin-left: 109px;
+        margin-top: 20px !important;
+        margin-bottom: 10px !important;
+    }
+    
+    .text-color-top {
+        color: #786E6D;
+        margin-top: 10px;
+    }
+
+    .text-general {
+        margin-left: 0px;
+        color: #786E6D;
+    }
+}
+
+/*end -- styles app.component of the routing in app-root*/
+
+
+    
+
+   
+    
