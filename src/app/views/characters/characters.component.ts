@@ -1,4 +1,4 @@
-import { Component, Input, SimpleChanges } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ServicesApiMarvel } from '../../services/characters.service';
 import { ObjectCharacters } from "app/models/comics.models";
 
@@ -11,21 +11,20 @@ import { ObjectCharacters } from "app/models/comics.models";
 export class CharactersComponent {
    objectResult: Array<ObjectCharacters> = [];
   
-  @Input() filter: string;
+  private filterSuperHero: string = "Iron Man";
 
-  filerSearch: string="Iron Man";
-
-  ngOnChanges(changes: SimpleChanges) {
-    this.filerSearch = this.filter == "" ? "Iron Man" : this.filter;
-    this.getFunction(this.filerSearch);
+  @Input()
+  set filter(recivedValue: string){
+    this.filterSuperHero = recivedValue;
+    this.getFunction();
   }
 
  constructor(private apiMarvel: ServicesApiMarvel) {
-    this.getFunction(this.filerSearch);
+    this.getFunction();
   }
 
-  getFunction(filter: string) {
-    this.apiMarvel.getCharacters(filter).subscribe((data) => { this.objectResult = data.data.results });
+  getFunction() {
+    this.apiMarvel.getCharacters((this.filterSuperHero == "" || this.filterSuperHero == null) ? "Iron Man" : this.filterSuperHero).subscribe((data) => { this.objectResult = data.data.results });
   }
 
 }

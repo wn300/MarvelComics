@@ -5,13 +5,12 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   templateUrl: './header.component.html',
 })
 export class HeaderComponent {
-  
-  @Output() SendSuperHero = new EventEmitter();
+  @Input() superHero: string;
+  @Output() superHeroChange: EventEmitter<string> = new EventEmitter();
+ 
+  set searchHero(sendValue: string){  
+    this.superHeroChange.emit(sendValue)
+  }
 
   constructor() {}
-  ValueFilter: string
-
-  private FilterSuperHeros(event) {  
-    this.SendSuperHero.emit({ Filter: this.ValueFilter });
-  }
 }

@@ -10,9 +10,6 @@ import { CharactersComponent } from "app/views/characters/characters.component";
   entryComponents: [HeaderComponent, FooterComponent, CharactersComponent],
 })
 export class AppComponent {
-  public filter:string;
-   ShowFilter(event):void{
-      //console.log(event.Filter);
-      this.filter = event.Filter;
-    }
+  public filter: string;
+  
 }
