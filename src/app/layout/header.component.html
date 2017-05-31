@@ -1,0 +1,16 @@
+<header class="nav-header-sombra">
+    <nav id="mainNav" class="navbar navbar-default navbar-static-top headerIndex">
+        <div id="container-header" class="container">
+            <div class="navbar-header">
+                <div class="row">
+                    <div class="col-lg-3 col-md-4 col-12 text-lg-left text-md-left text-right">
+                        <img class="img-fluid" src="../assets/images/logos/marvel-logo-v01.png" alt="MarvelComics" />
+                    </div>
+                    <div class="col-lg-6 col-md-8 col-12">
+                        <input #Filter [(ngModel)]="ValueFilter" type="text" class="form-control search-input-icon" placeholder="Search character..." (ngModelChange)="FilterSuperHeros($event)">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
