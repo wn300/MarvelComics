@@ -10,24 +10,23 @@
                 <div class="col-lg-4 col-md-6 col-sm-12 text-lg-left text-md-left text-center general-top">
                     <select class="form-control">
               <option>Sort by</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5</option>
+              <option value="Name" >Name</option>
+              <option value="Description" >Description</option>
+              <option value="ModificationDate" >Modification Date</option>
           </select>
                 </div>
             </div>
             <div class="row">
                 <div *ngFor="let characters of objectResult" class="col-lg-6 col-md-12 col-12">
                     <div class="row">
-                        <div class="col-lg-11 col-md-11 col-11 div-general-comics">
+                        <div on-mouseover='over()' on-mouseleave='leave()' class="col-lg-11 col-md-11 col-11 div-general-comics">
                             <div class="row">
                                 <div class="col-lg-6 col-md-6 col-12 text-lg-left text-md-left text-center">
                                     <img class="img-general rounded-circle" src="{{characters.thumbnail.path+'.'+characters.thumbnail.extension}}" alt="MarvelComics"
                                     />
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-12 text-left text-lg-left text-md-left text-center">
-                                    <h5 class="h5-title-general">
+                                    <h5 id="TitleName" class="h5-title-general">
                                         <b>{{characters.name}}</b>
                                     </h5>
                                     <div class="text-general">
@@ -44,18 +43,10 @@
                                         <b class="">Related comics</b>
                                     </h5>
                                 </div>
-                                <div class="text-color-top col-lg-6 col-md-6 col-12 text-lg-left text-md-left text-left">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                </div>
-                                <div class="text-color-top col-lg-6 col-md-6 col-12 text-lg-left text-md-left text-left">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                </div>
-                                <div class="text-color-top col-lg-6 col-md-6 col-12 text-lg-left text-md-left text-left">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                </div>
-                                <div class="text-color-top col-lg-6 col-md-6 col-12 text-lg-left text-md-left text-left">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                </div>
+                                <div *ngFor="let comics of characters.comics.items" class="text-color-top col-lg-6 col-md-6 col-12 text-lg-left text-md-left text-left _hoverRelated">
+                                    {{comics.name | slice: 0:40}}
+                                    <span [hidden]="comics.name.length < 50">...</span>                                    
+                                </div>                                
                             </div>
                         </div>
                     </div>

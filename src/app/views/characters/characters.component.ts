@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { ServicesApiMarvel } from '../../services/characters.service';
-import { ObjectCharacters } from "app/models/comics.models";
+import { ObjectCharacters } from "app/models/characters.model";
 
 @Component({
   selector: 'view-root',
@@ -14,7 +14,7 @@ export class CharactersComponent {
   private filterSuperHero: string = "Iron Man";
 
   @Input()
-  set filter(recivedValue: string){
+  set recivedfilter(recivedValue: string){
     this.filterSuperHero = recivedValue;
     this.getFunction();
   }
@@ -24,7 +24,17 @@ export class CharactersComponent {
   }
 
   getFunction() {
+    // debugger
     this.apiMarvel.getCharacters((this.filterSuperHero == "" || this.filterSuperHero == null) ? "Iron Man" : this.filterSuperHero).subscribe((data) => { this.objectResult = data.data.results });
+  }
+
+  over(){
+    // debugger
+    document.getElementById("TitleName").style.color = "#DC1D23"
+  }
+
+  leave(){
+    document.getElementById("TitleName").style.color = "#000000"
   }
 
 }
