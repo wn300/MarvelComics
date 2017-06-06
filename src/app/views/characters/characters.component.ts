@@ -1,41 +1,58 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Injectable, Pipe } from '@angular/core';
 import { ServicesApiMarvel } from '../../services/characters.service';
 import { ObjectCharacters } from "app/models/characters.model";
+import { PaginatePipe } from "ng2-pagination";
+
+import { DialogComponent, DialogService } from "ng2-bootstrap-modal";
+import { Item_Comic } from '../../models/item_comic.model';
+
 
 @Component({
   selector: 'view-root',
   templateUrl: './characters.component.html',
   styleUrls: ['./characters.component.css'],
-  providers: [ServicesApiMarvel]
+  providers: [ServicesApiMarvel],
 })
 export class CharactersComponent {
-   objectResult: Array<ObjectCharacters> = [];
-  
-  private filterSuperHero: string = "Iron Man";
+  public order: string = 'name';
+  public page: string;
+
+  public objectResult: Array<ObjectCharacters> = [];
+
+  private filterSuperHero: string = "";
 
   @Input()
-  set recivedfilter(recivedValue: string){
+  set recivedfilter(recivedValue: string) {
     this.filterSuperHero = recivedValue;
     this.getFunction();
   }
 
- constructor(private apiMarvel: ServicesApiMarvel) {
+  constructor(private apiMarvel: ServicesApiMarvel) {
     this.getFunction();
   }
 
   getFunction() {
-    // debugger
-    this.apiMarvel.getCharacters((this.filterSuperHero == "" || this.filterSuperHero == null) ? "Iron Man" : this.filterSuperHero).subscribe((data) => { this.objectResult = data.data.results });
+    //debugger
+    if (this.filterSuperHero == "" || this.filterSuperHero == null) {
+      this.apiMarvel.getCharactersAll().subscribe((data) => { this.objectResult = data.data.results });
+    } 
+    else {
+      this.apiMarvel.getCharactersFilter(this.filterSuperHero).subscribe((data) => { this.objectResult = data.data.results });
+    }
   }
 
-  over(){
-    // debugger
-    document.getElementById("TitleName").style.color = "#DC1D23"
+  sorByChracters(newValueSorBy:string){
+    //debugger
+    this.order = newValueSorBy;
   }
 
-  leave(){
-    document.getElementById("TitleName").style.color = "#000000"
+  over(id: string) {
+    //debugger
+    document.getElementById("TitleName" + id).style.color = "#EC1E22"
   }
 
+  leave(id: string) {
+    document.getElementById("TitleName" + id).style.color = "#000000"
+  }
 }
 

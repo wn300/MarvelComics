@@ -3,12 +3,14 @@ export class ObjectCharacters {
   id: number
   name: string
   description: string
+  modified: string
   thumbnail: Thumbnail
   comics: Comics
-  constructor(id: number, name: string, description: string, path: string, extension: string) {
+  constructor(id: number, name: string, description: string, modified: string, path: string, extension: string) {
     this.id = id;
     this.name = name;
     this.description = description;
+    this.modified = modified;
     this.thumbnail = new Thumbnail(path, extension);
   }
 }
@@ -23,7 +25,7 @@ class Thumbnail {
 }
 
 class Comics{
-    items: Array<Items>
+    items: Array<Items> 
 }
 
 class Items{

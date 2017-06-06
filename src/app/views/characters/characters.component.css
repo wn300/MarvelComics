@@ -11,7 +11,7 @@
 
 #continer-general{
     background-color: #F4F4F4 !important;
-    padding-bottom: 50px;
+    padding-bottom: 20px;
 }
 
 #continer-secundary{
@@ -28,6 +28,10 @@
 
 .row-general-top {
    margin-top: 4px;
+}
+
+.row-general-bottom {
+   padding-bottom: 30px;
 }
 
 select.form-control:not([size]):not([multiple]) {
@@ -66,6 +70,13 @@ select.form-control:not([size]):not([multiple]) {
     color: #786E6D;
 }
 
+.text-general-NotFounds {
+    margin-left: -15px;
+    color: #786E6D;
+    margin-top: 10px;
+    margin-bottom: 80px;
+}
+   
 .text-color-top {
     color: #786E6D;
     margin-top: 15px;
@@ -88,7 +99,21 @@ select.form-control:not([size]):not([multiple]) {
     background-color: #EB4B50 !important;
 }
 
+.ng2-pagination .current {
+    padding: 0.3rem 0.9rem !important;
+    background: #FCFCFC !important;
+    color: #000000 !important;
+    cursor: pointer !important;
+    font-weight: bold !important;
+}
 
+.ng2-pagination li {
+    padding: 0.3rem 0.9rem !important;
+    background: #FCFCFC !important;
+    color: #000000 !important;
+    cursor: pointer !important;
+    font-weight: bold !important;
+}
 
 
 @media (max-width: 1027px) {
@@ -162,7 +187,7 @@ select.form-control:not([size]):not([multiple]) {
 
     .h5-title-general {
         margin-left: 0px;
-        margin-top: 5px
+        margin-top: 15px;
     }
 
     .div-general-comics {
