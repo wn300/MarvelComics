@@ -16,3 +16,8 @@ class Thumbnail{
   extension:string;
 }
 
+class Thumbnail_model{
+  path:string;
+  extension:string;
+}
+
